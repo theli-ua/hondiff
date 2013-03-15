@@ -1,0 +1,126 @@
+a { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ffaa00; }
+a:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ffaa00; text-decoration: underline; }
+a:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ffaa00; text-decoration: underline; }
+a:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ffaa00; text-decoration: underline; }
+a:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ffaa00; text-decoration: none; }
+
+h2 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:18px; color:#FFFFFF; }
+
+.b10 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#000000; }
+.b10:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#000000; text-decoration: underline; }
+.b10:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#000000; text-decoration: underline; }
+.b10:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#000000; text-decoration: underline; }
+.b10:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#000000; text-decoration: none; }
+
+.b12 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#000000; }
+.b12:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#000000; text-decoration: underline; }
+.b12:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#000000; text-decoration: underline; }
+.b12:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#000000; text-decoration: underline; }
+.b12:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#000000; text-decoration: none; }
+
+.b14 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#000000; }
+.b14:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#000000; text-decoration: underline; }
+.b14:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#000000; text-decoration: underline; }
+.b14:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#000000; text-decoration: underline; }
+.b14:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#000000; text-decoration: none; }
+
+
+.bl10 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#59c2f7; }
+.bl10:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#59c2f7; text-decoration: underline; }
+.bl10:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#59c2f7; text-decoration: underline; }
+.bl10:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#59c2f7; text-decoration: underline; }
+.bl10:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#59c2f7; text-decoration: none; }
+
+.bl12 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#59c2f7; }
+.bl12:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#59c2f7; text-decoration: underline; }
+.bl12:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#59c2f7; text-decoration: underline; }
+.bl12:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#59c2f7; text-decoration: underline; }
+.bl12:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#59c2f7; text-decoration: none; }
+
+.bl14 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#59c2f7; }
+.bl14:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#59c2f7; text-decoration: underline; }
+.bl14:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#59c2f7; text-decoration: underline; }
+.bl14:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#59c2f7; text-decoration: underline; }
+.bl14:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#59c2f7; text-decoration: none; }
+
+.o10 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#ffaa00; }
+.o10:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#ffaa00; text-decoration: underline; }
+.o10:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#ffaa00; text-decoration: underline; }
+.o10:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#ffaa00; text-decoration: underline; }
+.o10:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#ffaa00; text-decoration: none; }
+
+.o12 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ffaa00; }
+.o12:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ffaa00; text-decoration: underline; }
+.o12:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ffaa00; text-decoration: underline; }
+.o12:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ffaa00; text-decoration: underline; }
+.o12:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ffaa00; text-decoration: none; }
+
+.o14 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#ffaa00; }
+.o14:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#ffaa00; text-decoration: underline; }
+.o14:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#ffaa00; text-decoration: underline; }
+.o14:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#ffaa00; text-decoration: underline; }
+.o14:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#ffaa00; text-decoration: none; }
+
+.r10 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#ed5353; }
+.r10:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#ed5353; text-decoration: underline; }
+.r10:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#ed5353; text-decoration: underline; }
+.r10:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#ed5353; text-decoration: underline; }
+.r10:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#ed5353; text-decoration: none; }
+
+.r12 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ed5353; }
+.r12:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ed5353; text-decoration: underline; }
+.r12:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ed5353; text-decoration: underline; }
+.r12:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ed5353; text-decoration: underline; }
+.r12:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ed5353; text-decoration: none; }
+
+.r14 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#ed5353; }
+.r14:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#ed5353; text-decoration: underline; }
+.r14:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#ed5353; text-decoration: underline; }
+.r14:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#ed5353; text-decoration: underline; }
+.r14:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#ed5353; text-decoration: none; }
+
+.w10 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#dcdcdc; }
+.w10:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#dcdcdc; text-decoration: underline; }
+.w10:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#dcdcdc; text-decoration: underline; }
+.w10:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#dcdcdc; text-decoration: underline; }
+.w10:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:10px; color:#dcdcdc; text-decoration: none; }
+
+.w12 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#dcdcdc; }
+.w12:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#dcdcdc; text-decoration: underline; }
+.w12:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#dcdcdc; text-decoration: underline; }
+.w12:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#dcdcdc; text-decoration: underline; }
+.w12:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#dcdcdc; text-decoration: none; }
+
+.w14 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#dcdcdc; }
+.w14:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#dcdcdc; text-decoration: underline; }
+.w14:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#dcdcdc; text-decoration: underline; }
+.w14:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#dcdcdc; text-decoration: underline; }
+.w14:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#dcdcdc; text-decoration: none; }
+
+.g12 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#545454; }
+.g12:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#545454; text-decoration: underline; }
+.g12:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#545454; text-decoration: underline; }
+.g12:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#545454; text-decoration: underline; }
+.g12:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#545454; text-decoration: none; }
+
+.g14 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#545454; }
+.g14:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#545454; text-decoration: underline; }
+.g14:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#545454; text-decoration: underline; }
+.g14:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#545454; text-decoration: underline; }
+.g14:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:14px; color:#545454; text-decoration: none; }
+
+.gr12 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#07bc60; }
+.gr12:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#07bc60; text-decoration: underline; }
+.gr12:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#07bc60; text-decoration: underline; }
+.gr12:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#07bc60; text-decoration: underline; }
+.gr12:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#07bc60; text-decoration: none; }
+
+.y12 { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ebf94e; }
+.y12:link { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ebf94e; text-decoration: underline; }
+.y12:visited { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ebf94e; text-decoration: underline; }
+.y12:active { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ebf94e; text-decoration: underline; }
+.y12:hover { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ebf94e; text-decoration: none; }
+
+.stat_winner { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#ffff96;}
+
+.player_offline { font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#97aab6;}

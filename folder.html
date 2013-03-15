@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Browsing folder {{ path }} for Heroes of Newerth version {{ version }}</title>
+        <script src="http://code.jquery.com/jquery-1.5.min.js"></script>
+        <LINK href="/folder.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h1>«{{ path }}»</h1>
+        <p id="UI_goUp"><a class="up" href="{{ up_url }}">Up</a></p>
+        <table class="" order="">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th></th>
+                    <th>Size</th>
+                    <th>File version</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {% for dir in dirs %}
+                <tr>
+                    <td><a class="dir" href="{{ dir }}/">{{ dir }}</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                    {% endfor %}
+                    {% for f in files|sort(attribute="path") %}
+                <tr>
+                    <td>{{ f.path }}</td>
+                    <td>
+                        {% if f.lang != 'None' %}
+                        <a href="/highlight/{{ f.version }}/{{f.fullpath}}?{{f.lang}}">
+                            <img src="/ascii.png" alt="view source" />
+                        </a>
+                        {% endif %}
+                        <a href="{{ base_url }}/{{ f.version }}/{{ f.fullpath }}.zip">
+                            <img src="/download.png" alt="download"/>
+                        </a>
+                        <a href="{{ base_url2 }}/{{ f.version }}/{{ f.fullpath }}.zip">
+                            <img src="/download.png" alt="alternative download source"/>
+                        </a>
+                    </td>
+                    <td>{{ f.size }}</td>
+                    <td>{{ f.version }}</td>
+                </tr>
+                    {% endfor %}
+
+            </tbody>
+        </table>
+    </body>
+</html>

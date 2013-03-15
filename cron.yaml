@@ -1,0 +1,4 @@
+cron:
+- description: fetch new versions
+  url: /tasks/versions
+  schedule: every 1 hours synchronized

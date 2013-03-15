@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <LINK href="/hon.css" rel="stylesheet" type="text/css">
+    <LINK href="/honfonts.css" rel="stylesheet" type="text/css">
+    <LINK href="/honstats.css" rel="stylesheet" type="text/css">
+
+    <LINK href="/hero.css" rel="stylesheet" type="text/css">
+    <title>{{ stringtables[entity.name + '_name'] }}</title>
+</head>
+<body>
+    <div id="content">
+        <div class="hero_info">
+            <!--<span class="hero_name">{{ stringtables[entity.name + '_name'] }}</span><br>-->
+            <span class="hero_description">{{ stringtables[entity.name + '_description'] }}</span><br>
+            <span class="hero_role">{{ stringtables[entity.name + '_role'] }}</span><br>
+            <!--<a href="/browse/{{version}}/{{entity.key().name()|key2dir}}">Browse code for this hero</a>-->
+        </div>
+        <div class="clearfix" style="position: relative; width: 900px; margin-left: 50px; margin-top: 50px;">
+            <!-- Unit Info -->
+            <div style="float: left; width: 305px;">
+                <div class="clearfix" style="margin: 0 5px 10px 5px; border:1px solid #666666; min-height: 86px; background: black;">
+                    <ul class="header_bar" style="margin: 2px;">
+                        <li>Unit Details</li>
+                    </ul>
+                    <div class="clearfix" style="margin: 3px 5px; min-height: 114px; border:1px solid #535e6c;">
+                        <div style="margin: 4px; height: 129px; text-align: left; background: #111111; border:1px solid #393939;">
+                            <div style="float: left;">
+                                <img src="/texture/{{entity.iconurl}}" width="122" height="122" style="border:1px solid #393939; margin: 2px 6px 2px 2px; float: left;">
+                            </div>
+                            <div style="float: left; width: 138px; padding-top: 3px;">
+                                <span class="o14"><b>Hero Name</b></span><br>{{ stringtables[entity.name + '_name'] }}<br><br>
+                                <span class="o14"><b>Primary Attribute</b></span><br>{{ entity.primaryattribute }}
+                                <div style="width: 96%; margin-top: 10px; padding-top: 2px; height: 33px; background: #000; border:1px solid #393939;">
+                                    <div style="float: left; width: 33%; text-align: center;">
+                                        <span class="r12"><b>Str</b></span><br>{{entity.strength}}</div>
+                                    <div style="float: left; width: 33%; text-align: center;">
+                                        <span class="gr12"><b>Agi</b></span><br>{{entity.agility}}</div>
+                                    <div style="float: left; width: 33%; text-align: center;">
+                                        <span class="bl12"><b>Intl</b></span><br>{{entity.intelligence}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="sub_header_bar" style="margin: 15px 5px 2px 5px;">
+                        <li>Hero Coding</li>
+                    </ul>
+                    <div style="margin: 0 5px 5px 5px; border:1px solid #535e6c; padding-bottom: 10px;">
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Hero Entity</li>
+                            <!--<li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>-->
+                            <li class="stat"><a href = "/highlight/{{entity.key().name()|replace('|','/')}}?xml">{{ entity.name }}</a></li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Hero Folder</li>
+                            <!--<li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>-->
+                            <li class="stat"><a href = "/browse/{{version}}/{{entity.key().name()|key2dir}}">Browse</a></li>
+                        </ul>
+                    </div>
+                    <ul class="sub_header_bar" style="margin: 15px 5px 2px 5px;">
+                        <li>Detailed Attributes</li>
+                    </ul>
+                    <div style="margin: 0 5px 5px 5px; border:1px solid #535e6c; padding-bottom: 10px;">
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Movement Speed</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.movespeed }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Turn Rate</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.turnrate }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Str per Level</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.strengthperlevel }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Agi per Level</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.agilityperlevel }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Int per Level</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.intelligenceperlevel }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Attack Duration</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.attackduration }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Attack Cooldown</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.attackcooldown }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Attack Action Time</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.attackactiontime }}</li>
+                        </ul>
+                    </div>
+                    <ul class="sub_header_bar" style="margin: 15px 5px 2px 5px;">
+                        <li>Level 1 Information</li>
+                    </ul>
+                    <div style="margin: 0 5px 5px 5px; border:1px solid #535e6c; padding-bottom: 10px;">
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Armor</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.armor + ( 0.14 * entity.agility ) }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Dmg. Reduction</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ (entity.armor + ( 0.14 * entity.agility ))|dmgreduction }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Magic Armor</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.magicarmor }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Magic Dmg. Reduction</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.magicarmor|dmgreduction }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Health Points</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.maxhealth + ( 19 * entity.strength) }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Mana Points</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.maxmana + (13 * entity.intelligence) }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">HP Regeneration</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.healthregen  + ( 0.03 * entity.strength) }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">MP Regeneration</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.manaregen + (0.04 * entity.intelligence) }}</li>
+                        </ul>
+                    </div>
+                    <ul class="sub_header_bar" style="margin: 15px 5px 2px 5px;">
+                        <li>Level 25 Information</li>
+                    </ul>
+                    <div style="margin: 0 5px 5px 5px; border:1px solid #535e6c; padding-bottom: 10px;">
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Armor</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.armor + ( 0.14 * (entity.agility  + 20 + (entity.agilityperlevel*24)|round(method='floor')) ) }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Dmg. Reduction</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ (entity.armor + ( 0.14 * (entity.agility  + 20 + (entity.agilityperlevel*24)|round(method='floor')) ))|dmgreduction }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Health Points</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.maxhealth + ( 19 * (entity.strength  + 20 + (entity.strengthperlevel*24)|round(method='floor') )) }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">Mana Points</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.maxmana + (13 * (entity.intelligence  + 20 + (entity.intelligenceperlevel*24)|round(method='floor') )) }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">HP Regeneration</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.healthregen  + ( 0.03 * (entity.strength  + 20 + (entity.strengthperlevel*24)|round(method='floor') )) }}</li>
+                        </ul>
+                        <ul class="stats_display">
+                            <li class="cat" style="width: 170px;">MP Regeneration</li>
+                            <li class="arrow"><img src="/arrow.gif" width="5" height="10"></li>
+                            <li class="stat">{{ entity.manaregen + (0.04 * (entity.intelligence  + 20 + (entity.intelligenceperlevel*24)|round(method='floor') )) }}</li>
+                        </ul>
+                    </div>
+                    <!--
+                    <ul class="sub_header_bar" style="margin: 15px 5px 2px 5px;">
+                        <li>Recommended Items</li>
+                    </ul>
+                    <div style="margin: 0 5px 5px 5px; border:1px solid #535e6c; padding-bottom: 10px;">
+                        <div style="width: 280px; text-align: center;">
+                            <div style="padding-top: 10px;">
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+            <!-- Abilites  -->
+            <div style="float: right; width: 595px;">
+                <ul class="sub_header_bar" style="margin: 0 5px 2px 5px;">
+                    <li>Attack</li>
+                </ul>
+                <div class="clearfix" style="margin: 0 5px 10px 5px; border:1px solid #535e6c; min-height: 50px; background: black;">
+                    <div class="abilvitals_bg" style="margin: 6px 6px 0 6px;">
+                        <div style="float: left; margin-left: 5px;">
+                            <div style="float: left; padding-top: 10px;"><span class="o12"><b>Attack Type</b></span></div>
+                            <div style="float: left; margin: 0 6px; padding-top: 12px;"><img src="/arrow.gif" width="5" height="10"></div>
+                            <div style="float: left; padding-top: 10px;">{{ stringtables['AttackType_' + entity.attacktype] }}</div>
+                        </div>
+                        <div style="float: left; margin-left: 15px;">
+                            <div style="float: left; padding-top: 10px;"><span class="o12"><b>Range</b></span></div>
+                            <div style="float: left; margin: 0 6px; padding-top: 12px;"><img src="/arrow.gif" width="5" height="10"></div>
+                            <div style="float: left; padding-top: 10px;">{{ entity.attackrange }}</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="sub_header_bar" style="margin: 0 5px 2px 5px;">
+                    <li>Lvl1 Attack</li>
+                </ul>
+                <div class="clearfix" style="margin: 0 5px 10px 5px; border:1px solid #535e6c; min-height: 50px; background: black;">
+                    <div class="abilvitals_bg" style="margin: 6px 6px 0 6px;">
+                        <div style="float: left; margin-left: 15px;">
+                            <div style="float: left; padding-top: 10px;"><span class="o12"><b>Damage</b></span></div>
+                            <div style="float: left; margin: 0 6px; padding-top: 12px;"><img src="/arrow.gif" width="5" height="10"></div>
+                            <div style="float: left; padding-top: 10px;">{{ entity.attackdamagemin + entity[entity.primaryattribute|lower] }}-{{ entity.attackdamagemax  + entity[entity.primaryattribute|lower]}}</div>
+                        </div>
+                        <div style="float: left; margin-left: 15px;">
+                            <div style="float: left; padding-top: 10px;"><span class="o12"><b>Attacks/Sec.</b></span></div>
+                            <div style="float: left; margin: 0 6px; padding-top: 12px;"><img src="/arrow.gif" width="5" height="10"></div>
+                            <div style="float: left; padding-top: 10px;">{% set agi=entity.agility %} {{ (1.0/(((entity.attackcooldown/1000)/( 1 + agi/100)/0.05)|round(0,'ceil') * 0.05))|round(2,'ceil') }}</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="sub_header_bar" style="margin: 0 5px 2px 5px;">
+                    <li>Lvl25 Attack</li>
+                </ul>
+                <div class="clearfix" style="margin: 0 5px 10px 5px; border:1px solid #535e6c; min-height: 50px; background: black;">
+                    <div class="abilvitals_bg" style="margin: 6px 6px 0 6px;">
+                        <div style="float: left; margin-left: 15px;">
+                            <div style="float: left; padding-top: 10px;"><span class="o12"><b>Damage</b></span></div>
+                            <div style="float: left; margin: 0 6px; padding-top: 12px;"><img src="/arrow.gif" width="5" height="10"></div>
+                            <div style="float: left; padding-top: 10px;">{{ entity.attackdamagemin + 20 + entity[entity.primaryattribute|lower] + entity[entity.primaryattribute|lower] + (24*entity[entity.primaryattribute|lower + 'perlevel'])|round(method='floor')}}-{{ entity.attackdamagemax + 20 + entity[entity.primaryattribute|lower] + entity[entity.primaryattribute|lower] + (24*entity[entity.primaryattribute|lower + 'perlevel'])|round(method='floor')}}</div>
+                        </div>
+                        <div style="float: left; margin-left: 15px;">
+                            <div style="float: left; padding-top: 10px;"><span class="o12"><b>Attacks/Sec.</b></span></div>
+
+                            <div style="float: left; margin: 0 6px; padding-top: 12px;"><img src="/arrow.gif" width="5" height="10"></div>
+                            <div style="float: left; padding-top: 10px;">{% set agi=entity.agility + 20 + (entity.agilityperlevel*24)|round(method='floor') %} {{ (1.0/(((entity.attackcooldown/1000)/( 1 + agi/100)/0.05)|round(0,'ceil') * 0.05))|round(2,'ceil') }}</div>
+                        </div>
+                    </div>
+                </div>
+                {#
+                {% for ai in range(4) %}
+                {% set a = abilities[entity[(['inventory' , ai])|join('')]] %}
+                #}
+                {% for a in abilities %}
+                <ul class="sub_header_bar" style="margin: 2px 5px">
+                    <li>{{ stringtables[a.name + '_name'] }}</li>
+                </ul>
+                <div class="clearfix" style="margin: 0 5px 10px 5px; border:1px solid #535e6c; min-height: 86px; background: black;">
+                    <div id="desc1" style="margin: 10px 10px 0 10px;">
+                        <span class="w12">{{ stringtables[a.name + '_description']|hon2html }}</span>
+                    </div>
+                    <div class="clearfix" style="margin: 10px 10px 10px 10px; min-height: 114px; border:1px solid #666666;">
+                        <div style="float: left; width: 20%;">
+                            <img src="/texture/{{a.iconurl}}" width="100" height="100" style="margin: 5px; border:1px solid #393939;">
+                        </div>
+                        <div style="float: left; width: 80%;">
+                            <div class="abilvitals_bg">
+                                <div style="float: left; margin-left: 15px;">
+                                    <div style="float: left; padding-top: 10px;"><span class="o12"><b>Action</b></span></div>
+                                    <div style="float: left; margin: 0 6px; padding-top: 12px;"><img src="/arrow.gif" width="5" height="10"></div>
+                                    <div style="float: left; padding-top: 10px;">{{ a.actiontype|replace('_',' ')|capitalize }}</div>
+                                </div>
+                                {% if a.targetscheme is defined %}
+                                <div style="float: left; margin-left: 15px;">
+                                    <div style="float: left; padding-top: 10px;"><span class="o12"><b>Type</b></span></div>
+                                    <div style="float: left; margin: 0 6px; padding-top: 12px;"><img src="/arrow.gif" width="5" height="10"></div>
+                                    <div style="float: left; padding-top: 10px;">{%if stringtables['TargetScheme_' + a.targetscheme] is defined %}{{ stringtables['TargetScheme_' + a.targetscheme] }}{%else%}{{a.targetscheme|replace('_',' ')|capitalize}}{%endif%}</div>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <div style="background: #0e121b; margin: 6px 6px 5px 0; padding: 4px; line-height: 20px; border:1px solid #393939;">
+                                {% if a.casteffecttype is defined %}
+                                <span class="bl12" style="color:white"><b>Type:</b></span> {%if a.casteffecttype is not string%}{%for type in a.casteffecttype%}{% if stringtables['EffectType_' + type] is defined %}{{ stringtables['EffectType_' + type] }}{%else%}{{type}}{%endif%} {%endfor%}{%else%}{% if stringtables['EffectType_' + a.casteffecttype] is defined %}{{ stringtables['EffectType_' + a.casteffecttype] }}{%else%}{{a.casteffecttype}}{%endif%}{%endif%}<br>
+                                {% endif %}
+                                {% if a.range is defined %}
+                                <span class="bl12" style="color:white"><b>Range:</b></span> {{ a.range }}<br>
+                                {% endif %}
+                                {% if a.casttime is defined %}
+                                <span class="bl12" style="color:white"><b>Cast Time:</b></span>{%if a.casttime is iterable%}{{ a.casttime|divall(1000.0)|join(' / ') }}{%else%}{{a.casttime/1000.0}}{%endif%} Seconds<br>
+                                {% endif %}
+                                {% if a.manacost is defined %}
+                                <span class="bl12" style="color:#01DFD7"><b>Mana Cost:</b></span> {%if a.manacost is iterable%}{{ a.manacost|join(' / ') }}{%else%}{{a.manacost}}{%endif%}<br>
+                                {% endif %}
+                                {% if a.cooldowntime is defined %}
+                                <span class="bl12" style="color:#E8DF6A"><b>Cooldown:</b></span> {% if a.cooldowntime is iterable %}{{ a.cooldowntime|divall(1000.0)|join(' / ')}}{% else %}{{ a.cooldowntime/1000.0 }}{% endif %} Seconds<br>
+                                {% endif %}
+                                <span class="bl12" style="color:red"><b>Required Level:</b></span> {{ a.requiredlevel|join(' / ') }}<br>
+                            </div>
+                            <div id="desc2" style="background: #0e121b; margin: 6px 6px 5px 0; padding: 4px; line-height: 17px; border:1px solid #393939;">
+                                <b><u>Effect</u></b><br>{{ stringtables[a.name + '_description_simple']|hon2html }}</div>
+                            {% if stringtables[a.name + '_IMPACT_effect'] is defined %}
+                            <div id="desc2" style="background: #0e121b; margin: 6px 6px 5px 0; padding: 4px; line-height: 17px; border:1px solid #393939;">
+                                <b><u>Impact Effect</u></b><br>{{ stringtables[a.name + '_IMPACT_effect']|hon2html }}</div>
+                            {% endif %}
+                            {% if stringtables[a.name + '_description_simple:ult_boost'] is defined %}
+                            <div id="desc2" style="background: #0e121b; margin: 6px 6px 5px 0; padding: 4px; line-height: 17px; border:1px solid #393939;">
+                                <b><u>SOTM Effect</u></b><br>{{ stringtables[a.name + '_description_simple:ult_boost']|hon2html }}</div>
+                            {% endif %}
+                            <div id="desc3" style="background: #0e121b; margin: 6px 6px 5px 0; padding: 4px; line-height: 17px; border:1px solid #393939;">
+                                <b><u>Ability Code</u></b><br>												     
+                                <span class="bl12" style="color:white"><a href = "/highlight/{{a.key().name()|replace('|','/')}}?xml">{{ a.name }}</a></span><br>
+                                <span class="bl12" style="color:white"><a href = "/browse/{{version}}/{{a.key().name()|key2dir}}">Browse</a></span> <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+</body>

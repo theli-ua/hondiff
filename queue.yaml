@@ -1,0 +1,5 @@
+queue:
+- name: importer
+  rate: 1/s
+  max_concurrent_requests: 1
+

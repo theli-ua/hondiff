@@ -1,0 +1,94 @@
+img {
+    border: 0 none;
+}
+th {
+    text-align: start;
+    white-space: nowrap;
+}
+th > a {
+    color: inherit;
+}
+td > a {
+    display: inline-block;
+}
+td + td {
+    -moz-padding-end: 1em;
+    text-align: end;
+    white-space: nowrap;
+}
+.dir, .symlink, .file {
+    -moz-margin-start: 20px;
+}
+.dir:before, .file > img {
+    -moz-margin-end: 4px;
+    -moz-margin-start: -20px;
+    vertical-align: middle;
+}
+.dir:before {
+    content: url("/folder.png");
+}
+
+:root,html {
+    font-family: sans-serif;
+    /*background-color: -moz-dialog;*/
+    background-color: #ece9d8;
+    /*color: -moz-dialogtext;*/
+    font: message-box;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+body {
+    background-color: -moz-field;
+    border: 1px solid threedshadow;
+    border-radius: 10px 10px 10px 10px;
+    color: -moz-fieldtext;
+    margin: 4em auto;
+    max-width: 65em;
+    min-width: 30em;
+    padding: 3em;
+}
+h1 {
+    border-bottom: 1px solid threedlightshadow;
+    font-size: 160%;
+    font-weight: normal;
+    margin: 0 0 0.6em;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+p {
+    font-size: 110%;
+}
+#UI_goUp {
+    float: left;
+    margin-top: 0;
+}
+body #UI_goUp {
+    float: right;
+}
+table {
+    clear: both;
+    margin: 0 auto;
+    width: 90%;
+}
+thead {
+    font-size: 130%;
+}
+tbody > tr:hover {
+    -moz-outline-radius: 0.3em 0.3em 0.3em 0.3em;
+    outline: 1px solid threedlightshadow;
+}
+.up {
+    -moz-margin-start: 20px;
+    padding: 0 0.5em;
+}
+.up:before {
+    -moz-margin-end: 4px;
+    -moz-margin-start: -20px;
+    content: url("/go-up.png");
+    vertical-align: middle;
+}
+BODY{background-color:#fff}

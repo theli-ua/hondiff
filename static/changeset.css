@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div.header {
+    height: 91px;
+    margin: 0 auto;
+    min-width: 950px;
+    width: 958px;
+    background: url("background.png") repeat-x scroll 0 0 #FFFFFF;
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: -1px;
+    text-shadow: 1px 1px 0 #FFFFFF;
+    text-align: center;
+}
+
+p.title {
+    color: #213F4D;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 8px;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+
+div.set {
+    background: none repeat scroll 0 0 #E6F1F6;
+    border: 1px solid #C5D5DD;
+    border-radius: 4px 4px 4px 4px;
+    margin: 10px 0;
+    padding: 8px 8px 0;
+}
+div.changeset {
+    display: block;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 920px;
+}
+div.fchanged {
+    /*color : green;*/
+    /*border: solid red;*/
+}
+
+div.fadds {
+    background-color: #DDFFDD;
+}
+
+div.fdels {
+    background-color: #FFDDDD;
+}
+
+div.unified_diff{
+    border: solid #55FF55;
+}
+
+div.unified_diff div.add {
+    background-color: #55FF55;
+}
+
+div.unified_diff div.del {
+    background-color: #FF5555;
+}

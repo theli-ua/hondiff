@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>View changes between chosen Heroes of Newerth versions</title>
+        <script src="http://code.jquery.com/jquery-1.5.min.js"></script>
+        <script type="text/javascript" src="/jquery.autocomplete.js"></script>
+        <script>
+            $(document).ready(function(){
+                var data = [ {% for d in versions %} "{{ d }}", {% endfor %} ];
+                $(".verinput").autocomplete(data);
+                $('#target').submit(function() {
+                    //alert('Handler for .submit() called.');
+                    //alert($("input:first").val());
+                    location.href ='/htmldiff/' + $("input[name='source']").val() + '/' + $("input[name='target']").val();
+                    return false;
+                });
+                $('#target2').submit(function() {
+                    //alert('Handler for .submit() called.');
+                    //alert($("input:first").val());
+                    location.href ='/browse/' + $("input[name='version']").val() + '/';
+                    return false;
+                });
+
+            });
+        </script>
+        <LINK href="/index.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/jquery.autocomplete.css" type="text/css" />
+    </head>
+    <body>
+        <div class="version_form">
+            <form id="target" action="asdfasdf">
+                Source version: <input class="verinput" type="text" name="source" value="{{ previous }}" />
+                Target version: <input class="verinput" type="text" name="target" value="{{ latest }}" />
+                <input type="submit" value="Go" />
+            </form>
+            <div id="other">
+                Choose versions to view changeset for
+            </div>
+        </div>
+        <div class="version_form">
+            <form id="target2" action="asdfasdf">
+                Version: <input class="verinput" type="text" name="version" value="{{ latest }}" />
+                <input type="submit" value="Go" />
+            </form>
+            <div id="other">
+                Choose version to browse files
+            </div>
+        </div>
+        <br>
+        <a href="/heroes/latest/">View advanced heroes information</a><br>
+        <a href="/query/latest/">Query HoN entity Database</a>
+
+    </body>
+</html>

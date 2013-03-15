@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Changeset for Heroes of Newerth versions {{ source_version }} and {{target_version}}</title>
+        <script src="http://code.jquery.com/jquery-1.5.min.js"></script>
+        <script>$(document).ready(function(){ 
+            $('.udiff').bind('click',function(e){
+                $(this).unbind('click');
+                e.preventDefault();
+                $('<div />').load(this.href).insertAfter($(this));
+                    $(this).click(function() { return false; });
+                }); 
+            });
+        </script>
+        <LINK href="/changeset.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div class="header">
+            <h1>Changeset for Heroes of Newerth versions {{ source_version }} and {{target_version}}</h1>
+        </div>
+        <div class="changeset">
+            <div class="set">
+                <p class="title">Changed files:</p>
+                <div class="fchanged">
+                    {% for file in changes|sort(attribute="path") %}
+                    <!--<a href="{{ base_url }}/{{ file.old_version }}/{{ file.path }}.zip"><img src="/download.png"/></a>-->
+                    <!--<a href="{{ base_url2 }}/{{ file.old_version }}/{{ file.path }}.zip"><img src="/download.png"/></a>-->
+                    <!--||-->
+                    <!--<a href="{{ base_url }}/{{ file.new_version }}/{{ file.path }}.zip"><img src="/download.png"/></a>-->
+                    <!--<a href="{{ base_url2 }}/{{ file.new_version }}/{{ file.path }}.zip"><img src="/download.png"/></a>-->
+                    {%if file.path is is_diffable %}
+                    <br>
+                        <a href="/highlight/{{ file.old_version }}/{{ file.path }}?{{ file.path|get_lang }}"><img src="/ascii.png" alt="view old version"/></a>
+                        <a href="/highlight/{{ file.new_version }}/{{ file.path }}?{{ file.path|get_lang }}"><img src="/ascii.png" alt="view new version"/></a>
+                        <a href="/htmldiff/{{ file.old_version }}/{{ file.new_version }}/{{ file.path }}?arches={{ arches }}" class="udiff">{{ file.path }}</a>
+                    {% else %}
+                        <br>{{ file.path }}
+                    {% endif %}
+                    {% if loop.last %}
+                    <br>Total: {{ loop.index }}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="set">
+                <p class="title">Added files:</p>
+                <div class="fadds">
+                    {% for file in adds|sort(attribute="path") %}
+                    <!--<a href="{{ base_url }}/{{ file.new_version }}/{{ file.path }}.zip"><img src="/download.png"/></a>-->
+                    <!--<a href="{{ base_url2 }}/{{ file.new_version }}/{{ file.path }}.zip"><img src="/download.png"/></a>-->
+                    <br>
+                    {%if file.path is is_diffable %}
+                        <a href="/highlight/{{ file.new_version }}/{{ file.path }}?{{ file.path|get_lang }}"><img src="/ascii.png" alt="view new version"/></a>
+                    {% endif %}
+                    {{ file.path }}
+                    {% if loop.last %}
+                    <br>Total: {{ loop.index }}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="set">
+                <p class="title">Deleted files:</p>
+                <div class="fdels">
+                    {% for file in dels|sort(attribute="path") %}
+                    <!--<a href="{{ base_url }}/{{ file.old_version }}/{{ file.path }}.zip"><img src="/download.png"/></a>-->
+                    <!--<a href="{{ base_url2 }}/{{ file.old_version }}/{{ file.path }}.zip"><img src="/download.png"/></a>-->
+                    <br>
+                    {%if file.path is is_diffable %}
+                        <a href="/highlight/{{ file.old_version }}/{{ file.path }}?{{ file.path|get_lang }}"><img src="/ascii.png" alt="view old version"/></a>
+                    {% endif %}
+                    {{ file.path }}
+                    {% if loop.last %}
+                    <br>Total: {{ loop.index }}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

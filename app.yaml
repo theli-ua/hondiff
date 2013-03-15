@@ -1,0 +1,48 @@
+application: hondiff
+version: 3
+api_version: 1
+runtime: python27
+threadsafe: yes
+#threadsafe: no
+
+libraries:
+- name: markupsafe
+  version: latest
+- name: lxml
+  version: latest
+- name: jinja2
+  version: latest
+
+handlers:
+#- url: /admin/.*
+  #script: $PYTHON_LIB/google/appengine/ext/admin
+  #login: admin
+
+- url: /((?:images/)?[^\/]*\.(ico|gif|png|jpg|js|css|txt))
+  static_files: static/\1
+  upload: static/(.*\.(ico|gif|png|jpg|js|css|txt))
+
+- url: /tasks/.*
+  script: crons.application
+  login: admin
+  
+- url: .*
+  script: main.application
+
+
+builtins:
+- remote_api: on
+
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?index\.yaml
+- ^(.*/)?index\.yml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?.*\.bak$
+- datastore
+- blobstore/.*

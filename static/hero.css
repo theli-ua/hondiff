@@ -1,0 +1,43 @@
+body {
+	/*text-align: center;*/
+	/*font-family: sans, arial;*/
+	/*font-size: 15px;*/
+    background: url("/bg.jpg") no-repeat scroll center top #000000;
+    /* color:  #CCCCCC; */
+    /*color:  #dddddd;*/
+    color: #DCDCDC;
+    font-family: Tahoma,Arial,Verdana,Helvetica,sans-serif;
+    font-size: 12px;
+}
+.hero_info {
+    /*float: left;*/
+    /*width: 99%;*/
+    background: none repeat scroll 0 0 black;
+    border: 1px solid #666666;
+    margin: 0 5px 10px;
+    /*min-height: 86px;*/
+    text-align: center;
+	font-size: 15px;
+    /*z-index:1000;*/
+}
+.hero_name {
+    font-size: 30px;
+    font-style: bold;
+}
+
+.hero_role {
+    padding:50px;
+    font-style: italic;
+}
+.hero_description {
+    padding:50px;
+}
+
+.abilvitals_bg {
+    background: url("/match_info_bg.gif") repeat-x scroll 0 0 transparent;
+    border: 1px solid #666666;
+    height: 35px;
+    margin: 6px 6px 0 0;
+    position: relative;
+    text-align: left;
+}

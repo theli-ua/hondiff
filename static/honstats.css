@@ -1,0 +1,96 @@
+.stats_display {
+margin: 0;
+height: 23px;
+text-align: left;
+list-style: none;
+}
+
+.stats_display li {
+font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#fff; font-weight: normal;
+float:left;
+padding: 0 8px;
+margin-top:8px;
+}
+
+.stats_display li.cat {
+font-weight: bold;
+float: left;
+width: 49%;
+color: #ffaa00;
+}
+
+.stats_display li.arrow {
+float: left;
+}
+
+.stats_display li.stat {
+float: right;
+}
+
+#stats_display_winner {
+color: yellow;
+}
+
+.stat_div_explander {
+display: block;
+clear: left;
+margin: -0.66em 0;
+visibility: hidden;
+}
+
+#stats_display_green {
+color: #a1eba5;
+}
+
+#stats_display_red {
+color: #ed5353;
+}
+
+#stats_display_red_disco {
+color: #6d6d6d;
+}
+
+#stats_display_blue {
+color: #59c2f7;
+}
+
+#stats_display_blue_disco {
+color: #6d6d6d;
+}
+
+
+.item_icon {
+float: left; border:1px solid #393939;
+}
+
+.item_icon:hover {
+border:1px solid #7d7d7d;
+}
+
+.stats_display_history li {
+font-family:Tahoma,Arial,Verdana,Helvetica,sans-serif; font-size:12px; color:#fff; font-weight: normal;
+float:left;
+padding: 0 8px;
+}
+
+.stats_display_history li.cat {
+font-weight: bold;
+float: left;
+width: 49%;
+color: #ffaa00;
+}
+
+.stats_display_history li.arrow {
+float: left;
+}
+
+.stats_display_history li.stat {
+float: right;
+}
+
+.stats_display_history {
+margin: 0;
+height: 23px;
+text-align: left;
+list-style: none;
+}

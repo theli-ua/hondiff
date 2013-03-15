@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Heroes of Newerth</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="/jquery-ui-1.8.19.custom.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="/ui.jqgrid.css" />
+        <script src="/jquery-1.7.2.min.js"></script>
+        <script src="/grid.locale-en.js" type="text/javascript"></script>
+        <script src="/jquery.jqGrid.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(window).bind('resize', function() {
+                $("#heroes").setGridWidth($(window).width());
+                $("#heroes").setGridHeight($(window).height() * .7);
+            }).trigger('resize');
+            fixPositionsOfFrozenDivs = function () {
+                    if (typeof this.grid.fbDiv !== "undefined") {
+                        $(this.grid.fbDiv).css($(this.grid.bDiv).position());
+                    }
+                    if (typeof this.grid.fhDiv !== "undefined") {
+                        $(this.grid.fhDiv).css($(this.grid.hDiv).position());
+                    }
+                };
+            var mydata = [ 
+                    {%for entity in data %}
+{
+icon : "<img src = /texture/{{entity.iconurl}} width=24 height=24 />",
+     {# name : "<a href = /highlight/{{entity.key().name()|replace('|','/')}}?xml>{{ stringtables[entity.name + '_name'] }}</a>", #}
+name : "<a href = {{entity.name}}>{{ stringtables[entity.name + '_name'] }}</a>",
+     namei : "{{ stringtables[entity.name + '_name'] }}",
+     team : "{{ entity.team }}",
+     type : "{{ entity.attacktype }}",
+     range : {{ entity.attackrange }},
+     projectilespeed : {{ entity.projectilespeed }},
+     attr : "{{ entity.primaryattribute }}",
+     strg : {{ entity.strengthperlevel }},
+     agig : {{entity.agilityperlevel }},
+     intg : {{ entity.intelligenceperlevel }},
+     ms : {{ entity.movespeed }},
+     turnrate : {{ entity.turnrate }},
+     dmg : "{{ entity.attackdamagemin }}-{{ entity.attackdamagemax }}",
+     dmgi : {{ (entity.attackdamagemin + entity.attackdamagemax)/2 }},
+     armor : {{ entity.armor }},
+     marm : {{ entity.magicarmor }},
+     ad : {{ entity.attackduration }},
+     aat : {{ entity.attackactiontime }},
+     acd : {{ entity.attackcooldown }},
+     aggro : {{ entity.aggrorange }},
+     day : {{ entity.sightrangeday }},
+     night : {{ entity.sightrangenight }},
+
+     str1 : {{ entity.strength }},
+     agi1 : {{ entity.agility }},
+     int1 : {{ entity.intelligence }},
+     dmg1 : "{{ entity.attackdamagemin + entity[entity.primaryattribute|lower] }}-{{ entity.attackdamagemax  + entity[entity.primaryattribute|lower]}}",
+     dmg1i : {{ (entity.attackdamagemin + entity[entity.primaryattribute|lower] + entity.attackdamagemax  + entity[entity.primaryattribute|lower]) / 2.0}},
+     armor1 : {{ entity.armor + ( 0.14 * entity.agility ) }},
+     hp1 : {{ entity.maxhealth + ( 19 * entity.strength) }},
+     mp1 : {{ entity.maxmana + (13 * entity.intelligence) }},
+     hpr1 : {{ entity.healthregen  + ( 0.03 * entity.strength) }},
+     mpr1 : {{ entity.manaregen + (0.04 * entity.intelligence) }},
+
+     str25 : {{ entity.strength + 20 + (entity.strengthperlevel*24)|round(method='floor') }},
+     agi25 : {{ entity.agility + 20 + (entity.agilityperlevel*24)|round(method='floor') }},
+     int25 : {{ entity.intelligence + 20 + (entity.intelligenceperlevel*24)|round(method='floor') }},
+     dmg25 : "{{ entity.attackdamagemin + 20 + entity[entity.primaryattribute|lower] + (24*entity[entity.primaryattribute|lower + 'perlevel'])|round(method='floor')}}-{{ entity.attackdamagemax + 20 + entity[entity.primaryattribute|lower] + (24*entity[entity.primaryattribute|lower + 'perlevel'])|round(method='floor')}}",
+     dmg25i : {{ (entity.attackdamagemin + 20 + entity[entity.primaryattribute|lower] + (24*entity[entity.primaryattribute|lower + 'perlevel'])|round(method='floor') + entity.attackdamagemax + 20 + entity[entity.primaryattribute|lower] + (24*entity[entity.primaryattribute|lower + 'perlevel'])|round(method='floor'))/2.0}},
+     armor25 : {{ entity.armor + ( 0.14 * (entity.agility  + 20 + (entity.agilityperlevel*24)|round(method='floor')) ) }},
+     hp25 : {{ entity.maxhealth + ( 19 * (entity.strength  + 20 + (entity.strengthperlevel*24)|round(method='floor') )) }},
+     mp25 : {{ entity.maxmana + (13 * (entity.intelligence  + 20 + (entity.intelligenceperlevel*24)|round(method='floor') )) }},
+     hpr25 : {{ entity.healthregen  + ( 0.03 * (entity.strength  + 20 + (entity.strengthperlevel*24)|round(method='floor') )) }},
+     mpr25 : {{ entity.manaregen + (0.04 * (entity.intelligence  + 20 + (entity.intelligenceperlevel*24)|round(method='floor') )) }}
+},
+                    {% endfor %}
+            ];
+                jQuery(document).ready(function() {
+                $.extend($.jgrid.search, {multipleSearch: true, multipleGroup: true});
+                jQuery("#heroes").jqGrid({ data: mydata, 
+                                    datatype: "local", 
+                                    autowidth: true,
+                                    shrinkToFit : false,
+                                    gridview : true,
+                                    height: window.innerHeight * .7,
+                                    //rowNum: {{ data | count }},
+                                    rownum : 20,
+                                    pager: '#pager',
+                                    toppager: true,
+                                    rownumbers: true,
+                                    //multiselect: true,
+                                    //autoencode: true,
+                                    rowList: [20,30, 50, 100, 1000],
+                                    ignoreCase: true,
+                                    colNames:[
+                                    '',
+                                    'Name',
+                                    'Team',
+                                    'Attack Type',
+                                    'Attack Range',
+                                    'Projectile Speed',
+                                    'Primary Attribute',
+                                    'Strength Gain',
+                                    'Agility Gain',
+                                    'Intelligence Gain',
+                                    'Base Movespeed',
+                                    'Turnrate',
+                                    'Base Damage',
+                                    'Base Armor',
+                                    'Magic Armor',
+                                    'Attack Duration',
+                                    'Attack Action Time',
+                                    'Attack Cooldown',
+                                    'Aggro Range',
+                                    'Sight Range Day',
+                                    'Sight Range Night',
+
+                                    'Lvl1 Strength',
+                                    'Lvl1 Agility',
+                                    'Lvl1 Intelligence',
+                                    'Lvl1 Damage',
+                                    'Lvl1 Armor',
+                                    'Lvl1 HP',
+                                    'Lvl1 MP',
+                                    'Lvl1 HP Renegeration',
+                                    'Lvl1 MP Regeneration',
+
+                                    'Lvl25 Strength',
+                                    'Lvl25 Agility',
+                                    'Lvl25 Intelligence',
+                                    'Lvl25 Damage',
+                                    'Lvl25 Armor',
+                                    'Lvl25 HP',
+                                    'Lvl25 MP',
+                                    'Lvl25 HP Renegeration',
+                                    'Lvl25 MP Regeneration',
+
+                                    ], 
+                                    colModel:[  
+                                    {name:'icon',index:'icon',frozen:true, width: 27,resizable: false, search:false, sortable:false },
+                                    {name:'name',index:'namei',sorttype:'text',frozen:true,searchoptions: {sopt:['cn'] }},
+                                    {name:'team',index:'team',sorttype:'text',
+                                        stype: 'select', searchoptions: { sopt: ['eq', 'ne'], value: ':Any;Legion:Legion;Hellbourne:Hellbourne'}
+                                    },
+                                    {name:'type',index:'type',sorttype:'text',
+                                        stype: 'select', searchoptions: { sopt: ['eq', 'ne'], value: ':Any;ranged:Ranged;melee:Melee'}
+                                    },
+                                    {name:'range',index:'range',sorttype:'float'},
+                                    {name:'projectilespeed',index:'projectilespeed',sorttype:'float'},
+                                    {name:'attr',index:'attr',sorttype:'text',
+                                        stype: 'select', searchoptions: { sopt: ['eq', 'ne'], value: ':Any;Intelligence:Int;Agility:Agi;Strength:Str'}
+                                    },
+                                    {name:'strg',index:'strg',sorttype:'float'},
+                                    {name:'agig',index:'agig',sorttype:'float'},
+                                    {name:'intg',index:'intg',sorttype:'float'},
+                                    {name:'ms',index:'ms',sorttype:'float'},
+                                    {name:'turnrate',index:'turnrate',sorttype:'float'},
+                                    {name:'dmg',index:'dmgi',sorttype:'float'},
+                                    {name:'armor',index:'armor',sorttype:'float'},
+                                    {name:'marm',index:'marm',sorttype:'float'},
+                                    {name:'ad',index:'ad',sorttype:'float'},
+                                    {name:'aat',index:'aat',sorttype:'float'},
+                                    {name:'acd',index:'acd',sorttype:'float'},
+                                    {name:'aggro',index:'aggro',sorttype:'float'},
+                                    {name:'day',index:'day',sorttype:'float'},
+                                    {name:'night',index:'night',sorttype:'float'},
+
+                                    {name:'str1',index:'str1',sorttype:'float'},
+                                    {name:'agi1',index:'agi1',sorttype:'float'},
+                                    {name:'int1',index:'int1',sorttype:'float'},
+                                    {name:'dmg1',index:'dmg1i',sorttype:'float'},
+                                    {name:'armor1',index:'armor1',sorttype:'float'},
+                                    {name:'hp1',index:'hp1',sorttype:'float'},
+                                    {name:'mp1',index:'mp1',sorttype:'float'},
+                                    {name:'hpr1',index:'hpr1',sorttype:'float'},
+                                    {name:'mpr1',index:'mpr1',sorttype:'float'},
+
+
+                                    {name:'str25',index:'str25',sorttype:'float'},
+                                    {name:'agi25',index:'agi25',sorttype:'float'},
+                                    {name:'int25',index:'int25',sorttype:'float'},
+                                    {name:'dmg25',index:'dmg25i',sorttype:'float'},
+                                    {name:'armor25',index:'armor25',sorttype:'float'},
+                                    {name:'hp25',index:'hp25',sorttype:'float'},
+                                    {name:'mp25',index:'mp25',sorttype:'float'},
+                                    {name:'hpr25',index:'hpr25',sorttype:'float'},
+                                    {name:'mpr25',index:'mpr25',sorttype:'float'}
+                                    ], 
+                });
+
+                $('#heroes').jqGrid('filterToolbar',{stringResult: true, searchOnEnter: false, defaultSearch: "eq"});
+                jQuery("#heroes").jqGrid('setFrozenColumns');
+                $("#heroes").setGridParam({sortname:'namei', sortorder: 'asc'}).trigger('reloadGrid');
+                jQuery("#heroes").navGrid('#pager',{view:true, del:false, add:false, edit:false},
+                        {/*edit options*/}, {/*add options*/}, {/*del options*/}, {/*search options*/},
+                            {width: 500}
+                        );
+
+                });
+        </script>
+    </head>
+    <body>
+        <table id="heroes"></table>
+        <div id="pager"></div>
+    </body>
+</html>
