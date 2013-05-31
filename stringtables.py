@@ -1,6 +1,6 @@
 from manifest import Manifest
 import fetcher
-from google.appengine.api import memcache
+import multicache as memcache
 import re
 re_entry = re.compile(r'(.+?)[\t\ ]+(.+)')
 

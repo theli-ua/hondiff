@@ -56,7 +56,7 @@ class  HoNFileBrowser(CachedRequestHandler):
                     'files' : files,
                     'up_url' : up_url,
                     'base_url' : fetcher.get_base_url(arch),
-                    'base_url2' : fetcher.get_base_url2(arch),
+                    'base_url2' : fetcher.get_base_url(arch, 1),
                     }
             template = templates.get_template('folder.html')
             return template.render(template_values)
