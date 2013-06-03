@@ -73,7 +73,7 @@ class  HoNhtmldiff(CachedRequestHandler):
                     'adds' : adds,
                     'dels' : dels,
                     'base_url' : fetcher.get_base_url(arch),
-                    'base_url2' : fetcher.get_base_url2(arch),
+                    'base_url2' : fetcher.get_base_url(arch, 1),
                     'arches' : '|'.join([str(_) for _ in [oarch,narch]]),
                     }
             template = templates.get_template('changeset.html')
