@@ -68,7 +68,7 @@ def get_base_url(arch, n = 0):
         url = global_url2
 
     if arch == ARCHS.LINUX_RCT:
-        return url + ARCHS.RCT
+        return url + ARCHS.RCT_TUPLE
     elif arch == ARCHS.LINUX_SBT:
         return url + ARCHS.SBT_TUPLE
     else:
