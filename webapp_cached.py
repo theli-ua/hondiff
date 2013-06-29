@@ -4,6 +4,7 @@ import logging
 from google.appengine.api import users
 from world import AllowedAccess
 from fetcher import ARCHS
+from google.appengine.api.memcache import flush_all
 import multicache as memcache
 
 class CachedRequestHandler(webapp.RequestHandler):
@@ -46,11 +47,14 @@ class CachedRequestHandler(webapp.RequestHandler):
                 #html = self.get_page(arch,*args)
                 try:
                     html = self.get_page(arch,*args)
-                    if html is not None:
-                        memcache.set(self.request.url,html)
                 except:
                     html = 'Sorry, there was an error processing your request. Most probably hondiff is currently out of quota. App Engine resets all resource measurements at the beginning of each calendar day.'
                     memcache.set(self.request.url,html,3600)
+                try:
+                    if html is not None:
+                        memcache.set(self.request.url,html)
+                except:
+                    flush_all()
             
             if html is not None:
                 if self.content_type != None:
