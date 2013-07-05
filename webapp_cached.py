@@ -43,18 +43,21 @@ class CachedRequestHandler(webapp.RequestHandler):
                 html = memcache.get(self.request.url)
             except:
                 html = None
+                flush_all()
+
             if html is None:
-                #html = self.get_page(arch,*args)
-                try:
-                    html = self.get_page(arch,*args)
-                except:
-                    html = 'Sorry, there was an error processing your request. Most probably hondiff is currently out of quota. App Engine resets all resource measurements at the beginning of each calendar day.'
-                    memcache.set(self.request.url,html,3600)
+                html = self.get_page(arch,*args)
+                #try:
+                    #html = self.get_page(arch,*args)
+                #except:
+                    #html = 'Sorry, there was an error processing your request. Most probably hondiff is currently out of quota. App Engine resets all resource measurements at the beginning of each calendar day.'
+                    #memcache.set(self.request.url,html,3600)
                 try:
                     if html is not None:
                         memcache.set(self.request.url,html)
                 except:
                     flush_all()
+                    memcache.set(self.request.url,html)
             
             if html is not None:
                 if self.content_type != None:
