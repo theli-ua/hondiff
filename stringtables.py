@@ -1,11 +1,15 @@
 from manifest import Manifest
 import fetcher
 import multicache as memcache
+from google.appengine.api.memcache import flush_all
 import re
 re_entry = re.compile(r'(.+?)[\t\ ]+(.+)')
 
 def get_stringtables_entities(arch,version):
-    stringtable = memcache.get('stringtable|entities|{0}'.format(version))
+    try:
+        stringtable = memcache.get('stringtable|entities|{0}'.format(version))
+    except:
+        flush_all()
     if stringtable is not None:
         return stringtable
     stringtable = {}
@@ -15,5 +19,8 @@ def get_stringtables_entities(arch,version):
         m =  re_entry.match(line)
         if m:
             stringtable[m.group(1)] = m.group(2).strip()
-    memcache.set('stringtable|entities|{0}'.format(version),stringtable)
+    try:
+        memcache.set('stringtable|entities|{0}'.format(version),stringtable)
+    except:
+        flush_all()
     return stringtable
