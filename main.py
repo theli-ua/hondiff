@@ -25,6 +25,7 @@ from heroes import HoNHero
 from texture import HoNTexture
 from gamelog import GameLogRedirector
 from bbnotes import BBNotes
+from cai import CAI
 from fetcher import ARCHS
 #from google.appengine.ext.webapp import template
 import os
@@ -78,6 +79,7 @@ application = webapp2.WSGIApplication([
         ('/heroes/((?:[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)|latest)/?([a-zA-Z_0-9]+?)?', HoNHero),
         ('/texture/([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)/(.*)', HoNTexture),
         ('/gamelog/([0-9]+)', GameLogRedirector),
+        ('/cai/([0-9]+)', CAI),
         ],debug=False)
 
 
