@@ -156,7 +156,11 @@ class  HoNQuery(CachedRequestHandler):
             template_values['numbers'] = []
         template_values['stringtables'] = get_stringtables_entities(arch,version)
         template_values['error'] = error
-        template = templates.get_template('query.html')        
+        template_name = self.request.get('template')
+        if template_name and template_name == 'csv':
+            template = templates.get_template('query.csv')        
+        else:
+            template = templates.get_template('query.html')        
         if error == '':
             return template.render(template_values)
         else:

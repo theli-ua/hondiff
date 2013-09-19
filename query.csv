@@ -1,0 +1,4 @@
+{% if data|count > 0 %}
+{% for entity in data %}'{{entity[1].name}}',{% for k in keywords %}{% if k != 'versions' and k != 'pure' %}{% if entity[2][k] is number %}{{entity[2][k]}},{% elif entity[2][k] is string %}'{{entity[2][k]}}',{% elif entity[2][k] is sequence %}'{{entity[2][k]|join('|')}}',{% else %}'{{entity[2][k]}}',{% endif %}{% endif %}{% endfor %}
+{% endfor %}
+{% endif %}
