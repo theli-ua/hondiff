@@ -1,3 +1,5 @@
 blacklist:
 - subnet: 209.20.91.20
   description: chatparser
+- subnet: 212.227.17.208
+  description: no idea, constantly fetches gamelogs through me
