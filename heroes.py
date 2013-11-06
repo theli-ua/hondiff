@@ -23,7 +23,7 @@ class  HoNHero(CachedRequestHandler):
                 self.response.out.write("Sorry, this version is not imported into db yet, importing was put into queue")
                 taskqueue.add(url='/import',params={'version' : version,'arch' : arch},queue_name='importer')
             else:
-                self.redirect('/query/latest/?' + self.request.query_string)
+                self.redirect('/heroes/latest/?' + self.request.query_string)
             return None
         else:
             if hero is None:

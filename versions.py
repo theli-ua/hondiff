@@ -11,7 +11,11 @@ class Version(db.Model):
 def version_ok(arch,version):
     if len(version.split('.')) != 4:
         version += '.0'
-    return Version.get_or_insert(version,value=version,arch=arch)
+    try:
+        return Version.get_or_insert(version,value=version,arch=arch)
+    except:
+        #return Version.get(key_name=version,value=version,arch=arch)
+        return Version.get_by_key_name(version)
 
 def version_arch(version):
     v = Version.get_by_key_name(version)
