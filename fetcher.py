@@ -6,7 +6,7 @@ from google.appengine.ext import blobstore
 from google.appengine.api import files
 from google.appengine.ext import db
 
-global_url = 'http://patch.hon.s2games.com/'
+global_url = 'http://patch.heroesofnewerth.com/'
 global_url2  = 'http://dl.heroesofnewerth.com/'
 
 class OsArchTuple(db.Model):
