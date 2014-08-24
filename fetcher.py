@@ -6,8 +6,8 @@ from google.appengine.ext import blobstore
 from google.appengine.api import files
 from google.appengine.ext import db
 
-global_url = 'http://patch.heroesofnewerth.com/'
-global_url2  = 'http://dl.heroesofnewerth.com/'
+global_url2 = 'http://patch.heroesofnewerth.com/'
+global_url  = 'http://dl.heroesofnewerth.com/'
 
 class OsArchTuple(db.Model):
     os = db.TextProperty()
@@ -85,9 +85,12 @@ def fetch(arch,version,path,save=True):
     path = path.replace(' ','%20')
     zdata = get_from_storage(key,arch)
     if zdata is None:
-        result = urlfetch.fetch('%s/%s/%s.zip' % (base_url,version,path),deadline=10)
-        #print result.status_code
-        if result.status_code != 200:
+        try:
+            result = urlfetch.fetch('%s/%s/%s.zip' % (base_url,version,path),deadline=10)
+            #print result.status_code
+            if result.status_code != 200:
+                result = urlfetch.fetch('%s/%s/%s.zip' % (base_url2,version,path))
+        except:
             result = urlfetch.fetch('%s/%s/%s.zip' % (base_url2,version,path))
         if result.status_code == 200:
             zdata = result.content
