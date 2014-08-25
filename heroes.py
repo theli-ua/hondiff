@@ -32,9 +32,14 @@ class  HoNHero(CachedRequestHandler):
                 query = "Select * from Node where tag='hero'".format(version)
                 q = db.GqlQuery(query)
                 result = q.fetch(1000)
+                result = [_ for _ in result if _.name not in ['wl_Warlock']]
                 for hero in result:
                     if hasattr(hero,'attackprojectile') and hero.attackprojectile != '':
-                        hero.projectilespeed = db.GqlQuery("Select * from Node where name='{0}'".format(hero.attackprojectile)).fetch(1)[0].speed
+                        projectile = db.GqlQuery("Select * from Node where name='{0}'".format(hero.attackprojectile)).fetch(1)[0]
+                        if hasattr(projectile,'speed'):
+                            hero.projectilespeed = projectile.speed
+                        else:
+                            hero.projectilespeed = '""'
                     else:
                         hero.projectilespeed = '""'
 
@@ -43,7 +48,12 @@ class  HoNHero(CachedRequestHandler):
                     path = '/'.join(hero.key().name().split('|')[1].split('/')[:-1])
                     path = '/'.join([path,icon])
                     path = path.replace('game/resources0.s2z','game/textures.s2z/00000000')
-                    path = '/'.join([manifest.files[path]['version'],path])
+                    if path in manifest.files:
+                        path = '/'.join([manifest.files[path]['version'],path])
+                    else:
+                        logging.info("Failed to create url for hero icon :( :")
+                        logging.info(icon)
+                        logging.info(path)
                     hero.iconurl = path
                 template_values = {}
                 template_values['data'] = result
